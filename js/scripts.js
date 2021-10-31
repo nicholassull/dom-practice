@@ -8,6 +8,7 @@ $(document).ready(function() {
     $("ul#computer").children("li").first().click(function() {
       $(this).remove();
     });
+    
   });
 
   $("button#dog-btn").click(function() {
@@ -21,6 +22,13 @@ $(document).ready(function() {
     });
   });
   $("button#after-btn").click(function() {
-    $("ul#computer").after("<h2>Third Argument</h2>");
+    $("ul#computer").after("<h2 id='argument'>Third Argument</h2>");
+    $("h2#argument").after("<img src='img/fluffy-dog.webp' alt='very cute dog' width='400px'>");
+    $("ul#computer").siblings("img").click(function() {
+      $(this).remove();
+    });
+    $("ul#computer").siblings("h2#argument").click(function() {
+        $(this).remove();
+    });
   });
 });
